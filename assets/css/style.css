@@ -1,12 +1,51 @@
-* 
-{
-    padding: 0;
+
+
+body, html {
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Prend tout l'écran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* L'animation est derrière le contenu */
+    pointer-events: none; /* Désactive l'interaction avec l'arrière-plan */
+}
 
-body 
-{
-    background-color: #333;
+h1 {
+    z-index: 1; /* S'assurer que le contenu est devant l'animation */
+    font-size: 3em;
+    text-align: center;
+}
+
+.dynamic-text {
+    color: rgb(62, 39, 189);
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    border-right: 0.15em solid white;
+    animation: blink-caret 0.75s step-end infinite;
+}
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
 }
