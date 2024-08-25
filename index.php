@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Youssef Ghollamallah - Portfolio</title>
+    <link rel="shortcut icon" href="assets/pictures/www.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css?<?php time(); ?>">
+    <link rel="stylesheet" href="assets/css/main.css?<?php time(); ?>">
+    <title>YG- Portfolio</title>
 </head>
 <body>
 
