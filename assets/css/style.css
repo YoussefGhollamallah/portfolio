@@ -2,7 +2,9 @@ body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
     height: 100%;
+    font-family: Arial, sans-serif; /* Ajouter une police par défaut */
 }
 
 header {
@@ -14,8 +16,7 @@ header {
     justify-content: center;
     color: white;
     flex-direction: column;
-    box-shadow:0 10px 20px rgba(255, 255, 255, 0.5);
-    
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
     overflow: hidden;
 }
 
@@ -25,8 +26,9 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; 
+    z-index: 0;
     pointer-events: none; /* Désactive l'interaction avec l'arrière-plan */
+    object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
 }
 
 h1 {
@@ -36,9 +38,11 @@ h1 {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centrer le h1 parfaitement */
+    max-width: 90%; /* S'assurer que le texte ne déborde pas */
+    word-wrap: break-word; /* Permet de couper les mots s'ils sont trop longs */
 }
 
 .dynamic-text {
@@ -62,9 +66,48 @@ h1 {
 
 #svg {
     position: absolute;
-    bottom: 0; 
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%, -50%); 
-    z-index: 1; 
-    width: 100%; 
+    transform: translateX(-50%, 50%);
+    z-index: 1;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* Réduire la taille du texte sur les écrans plus petits */
+    }
+
+    header {
+        height: 90vh; /* Ajuster la hauteur de l'en-tête pour les petits écrans */
+    }
+
+    #svg {
+        width: 120%; /* Augmenter légèrement la largeur pour couvrir le bas de l'écran */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em; /* Réduire encore la taille du texte pour les très petits écrans */
+    }
+
+    .dynamic-text {
+        font-size: 1em; /* Ajuster la taille du texte dynamique */
+    }
+
+    header {
+  
+        height: 80vh; /* Réduire la hauteur de l'en-tête sur les très petits écrans */
+    }
+
+    #svg {
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        transform: translateX(-50%,50%); /* Supprimer la translation verticale */
+        z-index: 1;
+        width: 140%; /* Augmenter la largeur pour couvrir les bords sur les très petits écrans */
+    }
 }

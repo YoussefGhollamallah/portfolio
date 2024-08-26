@@ -4,14 +4,16 @@ main {
     align-items: center;
     background: #111;
     color: white;
+    padding: 20px;
 }
 
-h2,h3 {
+h2, h3 {
     text-align: center;
 }
 
 #photo {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
     filter: drop-shadow(0 0 0.75rem rgb(119, 119, 119));
 }
@@ -23,5 +25,132 @@ section {
 
 #about {
     display: flex;
+   
     align-items: center;
+    gap: 20px; /* Ajoute de l'espace entre les éléments */
+}
+
+/* Formulaire */
+.contact-section {
+    width: 100%;  
+    max-width: 1280px;
+    background-color: #333;
+    color: #f4f4f4;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box; /* Assure que le padding est pris en compte dans la largeur totale */
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.contact-form {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #111;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #168bff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column; /* Colonne par défaut sur les petits écrans */
+        text-align: center; /* Centrer le texte */
+    }
+
+    #photo { 
+        display: none;
+    }
+
+    .contact-section h2 {
+        font-size: 2em; /* Réduire la taille du titre sur les petits écrans */
+    }
+
+    .contact-form {
+        padding: 20px; /* Réduire le padding sur les petits écrans */
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.9em; /* Réduire légèrement la taille du texte */
+    }
+
+    .contact-form button[type="submit"] {
+        padding: 12px; /* Réduire le padding du bouton */
+        font-size: 1em; /* Réduire la taille de la police du bouton */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 15px; /* Réduire encore plus le padding sur les très petits écrans */
+    }
+
+    .contact-form {
+        padding: 15px; /* Réduire encore plus le padding du formulaire */
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.8em; /* Réduire encore plus la taille du texte */
+    }
+
+    .contact-form button[type="submit"] {
+        padding: 10px; /* Ajuster le padding du bouton pour les petits écrans */
+        font-size: 0.9em; /* Réduire encore plus la taille de la police du bouton */
+    }
 }
